@@ -68,7 +68,8 @@ The project follows a **Star Schema** data model for optimal performance and cla
 - **Top Customers by Order Frequency**
 - **Sales vs Profit Trend Over Time (Line Chart)**
 
-<img width="1560" height="733" alt="Screenshot 2026-01-20 111537" src="https://github.com/user-attachments/assets/c962337c-ece8-4ab6-adfa-6fec8c928682" />
+<img width="1560" height="729" alt="image" src="https://github.com/user-attachments/assets/2b722f26-d7b4-4b33-ae61-4246310986db" />
+
 
 
 ---
