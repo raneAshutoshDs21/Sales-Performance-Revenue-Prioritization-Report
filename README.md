@@ -1,125 +1,144 @@
-# 📊 Sales Performance & Revenue Prioritization Dashboard (Power BI)
+# 📊 Sales & Profit Performance Dashboard (Power BI)
 
-## 📌 Project Overview
-This project presents an **end-to-end Power BI sales analytics dashboard** designed to analyze retail sales performance and identify **high-impact revenue drivers** using **time intelligence, Top-N analysis, and Pareto (80/20) principles**.
+An executive-level **Sales & Profit Performance Dashboard** built using **Power BI**, designed to analyze revenue, profitability, customer behavior, and time-based performance across multiple business dimensions.
 
-The dashboard focuses on **decision-making**, not just reporting, by answering:
-- How are sales performing over time?
-- Which sub-categories contribute the most to revenue?
-- Where should the business prioritize its efforts?
+This project demonstrates **data modeling best practices**, **time-intelligent DAX**, and **business-focused analytics** using real-world sales data.
 
 ---
 
-## 🗂️ Dataset
-- **Records:** ~5,900 sales transactions  
-- **Domain:** Retail / Sales  
-- **Key Fields:**  
-  - Order Date  
-  - Sales  
-  - Profit  
-  - Quantity  
-  - Region  
-  - Category / Sub-Category  
+## 🔍 Project Overview
 
-> Note: The dataset represents approximately **1.5M in total revenue**.
+The dashboard analyzes sales data across **2019–2020** to answer key business questions:
+
+- How is overall sales and profitability performing?
+- Which product categories and customer segments drive profit?
+- Who are the most important customers by order frequency?
+- How do sales and profit trends behave over time?
+- How does performance change month-over-month and year-to-date?
 
 ---
 
-## 🧱 Data Model
-- Implemented a **star schema**
-- Created a **custom Calendar (Date) table**
-- Established a **one-to-many relationship**:
+## 📌 Key Metrics & KPIs
 
-This enabled accurate **time-based analysis** such as YoY, YTD, and rolling metrics.
+- **Total Sales:** ₹1.57M+
+- **Total Profit:** ₹175K+
+- **Total Orders:** 3,000+
+- **Total Quantity Sold:** 22K+
+- **Average Order Value (AOV)**
+- **Profit Margin %**
+- **Sales MTD / YTD / Previous Month**
+- **Sales Month-over-Month (MoM %)**
 
----
-
-## 🧮 Key DAX Concepts Used
-- Explicit measures (no implicit aggregations)
-- Time Intelligence:
-- Year-over-Year (YoY)
-- Year-to-Date (YTD)
-- Rolling 6 Months
-- Ranking & Filtering:
-- `RANKX`
-- Dynamic Top-N logic
-- Contribution & Prioritization:
-- Sales Contribution %
-- Cumulative Contribution %
-- Pareto (80/20) Analysis
-- Context management using:
-- `CALCULATE`
-- `FILTER`
-- `ALL`
-- Variables (`VAR`)
+All KPIs dynamically respond to slicers and filters.
 
 ---
 
-## 📈 Dashboard Features
+## 🧱 Data Modeling
 
-### 🔹 Executive KPIs
-- Total Sales  
-- Total Profit  
-- YoY Growth % (with conditional formatting)  
-- Sales YTD  
-- Rolling 6-Month Sales  
+The project follows a **Star Schema** data model for optimal performance and clarity.
 
-### 🔹 Sales Trend Analysis
-- Monthly Sales vs Previous Year comparison
-- Interactive slicers for:
-- Year
-- Region
+### Tables Used
+- **Fact Table**
+  - `fact_sales`
+- **Dimension Tables**
+  - `dim_customer`
+  - `dim_product`
+  - `dim_ship_mode`
+  - `dim_payment_mode`
+  - `calendar`
 
-### 🔹 Top-N Analysis
-- Dynamic **Top 5 Sub-Categories by Sales**
-- Automatically recalculates based on slicers
+### Calendar Table Highlights
+- Custom calendar table with **730+ dates**
+- Supports **MTD, YTD, PM, MoM** calculations
+- Uses a **Year–Month Sort Key** for correct chronological ordering across years
 
-### 🔹 Contribution Analysis
-- Donut chart showing **sales contribution %** of top sub-categories
-
-### 🔹 Pareto (80/20) Analysis
-- Combo chart (Bar + Line) visualizing:
-- Total Sales by Sub-Category
-- Cumulative Contribution %
-- Highlights how a small number of sub-categories drive the majority of revenue
+<img width="1470" height="732" alt="image" src="https://github.com/user-attachments/assets/9617bcd7-f86d-4585-b542-b4e5be0f1c98" />
 
 ---
 
-## 🎯 Key Insights
-- A limited number of sub-categories contribute **~70–80% of total revenue**
-- Sales growth trends vary significantly by **region and time period**
-- Pareto analysis helps identify **high-priority product segments** for strategic focus
+## 📊 Dashboard Visuals
+
+### KPI Section
+- Executive KPI cards with **conditional formatting**
+- Positive/negative performance highlighted dynamically
+
+### Analytical Visuals
+- **Total Sales & Total Profit by Category**
+- **Total Sales & Total Profit by Customer Segment**
+- **Top Customers by Order Frequency**
+- **Sales vs Profit Trend Over Time (Line Chart)**
+
+<img width="1560" height="733" alt="Screenshot 2026-01-20 111537" src="https://github.com/user-attachments/assets/c962337c-ece8-4ab6-adfa-6fec8c928682" />
+
+
+---
+
+## 🧮 DAX & Time Intelligence
+
+Key DAX concepts implemented:
+
+- Base measures for Sales, Profit, Quantity, Orders
+- Time intelligence measures:
+  - MTD
+  - YTD
+  - Previous Month
+  - Month-over-Month %
+- Conditional formatting logic for KPI indicators
+- Chronological sorting using **Year Month Sort** column
+
+---
+
+## 🎛️ Interactivity & Filters
+
+Slicers included:
+- **Year**
+- **Customer Segment**
+- **Ship Mode**
+
+These enable users to analyze performance from **strategic and operational perspectives** without cluttering the dashboard.
+
+---
+
+## 💡 Key Insights (Sample)
+
+- Office Supplies generate the highest sales volume, while Technology delivers stronger profitability.
+- Consumer segment drives revenue, whereas Corporate maintains healthier margins.
+- A small group of customers contributes disproportionately to order volume.
+- Sales show an upward trend, while profit exhibits higher volatility, indicating margin pressure in certain periods.
 
 ---
 
 ## 🛠️ Tools & Technologies
-- **Power BI**
+
+- **Power BI Desktop**
 - **DAX**
-- Data Modeling (Star Schema)
-- Time Intelligence Functions
+- **Power Query**
+- **Data Modeling (Star Schema)**
 
 ---
 
-## 📌 Why This Project Matters
-Unlike basic dashboards, this project emphasizes:
-- Explicit DAX over drag-and-drop logic
-- Business prioritization over raw metrics
-- Scalable, reusable analytical patterns
+## 🚀 How to Use
 
-It reflects **real-world BI practices** used in data analyst roles.
+1. Download the `.pbix` file from the repository
+2. Open it in **Power BI Desktop**
+3. Interact with slicers to explore performance by time, segment, and shipping mode
 
 ---
 
-## 🚀 Future Enhancements
-- Add customer-level segmentation (VIP / High Value)
-- Extend analysis to profitability-based Pareto
-- Create a drill-through page for sub-category deep dives
+## 📎 Project Status
+
+✅ Completed  
+📌 Portfolio-ready  
+📈 Suitable for **Data Analyst / BI Analyst** roles
 
 ---
 
-## 👤 Author
-**Ash**  
-Aspiring Data Analyst | Power BI | SQL | Analytics  
+## 📬 Contact
 
-> Feel free to explore, fork, or provide feedback.
+If you’d like to discuss this project or provide feedback, feel free to connect with me on LinkedIn.
 
+---
+
+ 
+
+ 
